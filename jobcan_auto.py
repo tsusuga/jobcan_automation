@@ -40,6 +40,6 @@ wait.until(EC.presence_of_all_elements_located)
 audit_button = driver.find_element_by_id('adit-button-push')
 audit_button.send_keys(Keys.ENTER)
 #確認のため停止
-time.sleep(1000)
+time.sleep(3)
 
 driver.quit()
