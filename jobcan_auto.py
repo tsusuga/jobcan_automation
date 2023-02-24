@@ -19,7 +19,6 @@ driver = webdriver.Chrome(options=options)
 url = 'https://id.jobcan.jp/users/sign_in?app_key=atd'
 driver.get(url)
 print(driver.current_url)
-
 #ページ上のすべての要素が読み込まれるまで待機
 wait = WebDriverWait(driver, 10)
 wait.until(EC.presence_of_all_elements_located)
@@ -39,7 +38,6 @@ login_button.send_keys(Keys.ENTER)
 wait.until(EC.presence_of_all_elements_located)
 audit_button = driver.find_element_by_id('adit-button-push')
 audit_button.send_keys(Keys.ENTER)
-#確認のため停止
+#視認のため停止
 time.sleep(3)
-
 driver.quit()
