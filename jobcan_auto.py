@@ -23,9 +23,9 @@ print(driver.current_url)
 wait = WebDriverWait(driver, 10)
 wait.until(EC.presence_of_all_elements_located)
 #入力フォームを取得
-id_input = driver.find_element_by_id('user_email')
-pw_input = driver.find_element_by_id('user_password')
-login_button = driver.find_element_by_id('login_button')
+id_input = driver.find_element(By.ID, 'user_email')
+pw_input = driver.find_element(By.ID, 'user_password')
+login_button = driver.find_element(By.ID, 'login_button')
 #.envファイルからログイン情報の取得
 load_dotenv()
 account_id = os.getenv('ID')
@@ -36,7 +36,7 @@ pw_input.send_keys(account_pw)
 login_button.send_keys(Keys.ENTER)
 #打刻ボタンを取得してPUSH
 wait.until(EC.presence_of_all_elements_located)
-audit_button = driver.find_element_by_id('adit-button-push')
+audit_button = driver.find_element(By.ID, 'adit-button-push')
 audit_button.send_keys(Keys.ENTER)
 #視認のため停止
 time.sleep(3)
